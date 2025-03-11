@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $data['title'] = 'Login';
+        $data['title'] = 'SIAP TUBA | Login';
         return view('users.login.index', $data);
     }
 }
