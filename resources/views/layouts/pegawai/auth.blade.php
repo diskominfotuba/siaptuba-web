@@ -57,8 +57,8 @@
         return;
     }
 
-        $('#btn_login').prop('disabled', true); // Nonaktifkan tombol
-        $('#loadingSubmit').removeClass('d-none');
+        $('#btn_login').addClass('d-none'); // Nonaktifkan tombol
+        $('#btn_loading').removeClass('d-none');
     });
 
 </script>

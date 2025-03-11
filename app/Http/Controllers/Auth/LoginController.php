@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -16,16 +18,15 @@ class LoginController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+        $this->validate($request, [
+            'nip'       => 'required',
+            'password'  => 'required'
         ]);
- 
-        if (Auth::attempt($credentials)) {
+
+        if (Auth::attempt(['nip' => $request->nip, 'password' => $request->password])) {
             $request->session()->regenerate();
-            Cache::put($request->email, $request->key, now()->addDays(90));
             return redirect()->intended('/user/dashboard');
         }
-        return back()->with('error', 'Email atau Password Salah!')->onlyInput('email');
+        return back()->with('error', 'Email atau Password Salah!')->onlyInput('nip');
     }
 }

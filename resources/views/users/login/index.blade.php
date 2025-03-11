@@ -20,9 +20,9 @@
                                 @csrf
                                 <input type="hidden" name="key" value="{{ request()->key }}">
                                 <div class="form-group">
-                                    <label for="email">{{ __('Email') }}</label>
-                                    <input id="email" type="email" class="form-control x-email" name="email"
-                                        value="{{ old('email') }}" tabindex="1" required autofocus>
+                                    <label for="nip">{{ __('NIP') }}</label>
+                                    <input id="nip" type="text" class="form-control x-nip" name="nip"
+                                        value="{{ old('nip') }}" tabindex="1" required autofocus>
                                 </div>
                                 <label for="password">{{ __('Password') }}</label>
                                 <div class="input-group mb-3">
@@ -35,7 +35,9 @@
                                 </div>
                             </div>
                         </div>
-                        @include('layouts.pegawai._loading_submit')
+                            <button id="btn_loading" class="btn btn-primary btn-block btn-lg mb-2 d-none" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Tunggu sebentar yah...
+                            </button>
                         <button type="submit" id="btn_login" class="btn btn-primary btn-block btn-lg">Masuk</button>
                     </form>
                     <div class="input-group mt-3">

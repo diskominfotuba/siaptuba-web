@@ -726,7 +726,7 @@
             await transAjax(param).then((result) => {
                 $('#feed-informasi').html(result);
             }).catch((err) => {
-               return alert('Internal server error!');
+                console.log('Internal server error!');
             });
         }
 
@@ -744,7 +744,7 @@
                 $('#dataTable').html(result)
 
             }).catch((err) => {
-                return alert('Internal server error!');
+                console.log('Internal server error!');
             });
         }
 
@@ -771,7 +771,7 @@
             await transAjax(param).then((result) => {
                 $('#showMediafeed').html(result);
             }).catch((err) => {
-                return alert('Internal server error!');
+                console.log('Internal server error!');
             });
         }
 
@@ -824,7 +824,7 @@
                 $('.imsak').html('Jam ' + jadwal.imsak);
                 $('.maghrib').html('Jam ' + jadwal.maghrib);
             }).catch((err) => {
-                return alert('Internal server error!');
+                console.log('Internal server error!');
             });
         }
     </script>
