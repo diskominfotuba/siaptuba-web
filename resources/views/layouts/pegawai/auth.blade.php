@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <meta name="theme-color" content="#1E2A5E">
-  <title>{{ $title ?? 'Login' }}</title>
+  <title>{{ $title ?? 'SIAP TUBA' }}</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="turbolinks-visit-control" content="reload">
 
