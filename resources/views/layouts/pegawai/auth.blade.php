@@ -3,16 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <meta name="google-site-verification" content="JNUql3k5Q0B10HhKDHMUZRMQb9Z23lLwY3oLqiCAJH0" />
+  <meta name="theme-color" content="#1E2A5E">
   <title>{{ $title ?? 'Login' }}</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="turbolinks-visit-control" content="reload">
 
+  <meta itemprop="name" content="SIAP TUBA" />
+  <meta itemprop="description" content="Sistem Administrasi Kabupaten Tulang Bawang" />
+  <meta itemprop="image" content="assets/icon/lc_icon_presensi.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:title" content="SIAP TUBA" />
+  <meta name="twitter:description" content="Sistem Administrasi Kabupaten Tulang Bawang" />
+  <meta name="twitter:creator" content="@" />
+  
+  <meta name="twitter:image" content="assets/icon/lc_icon_presensi.png" />
+  
+  <meta name="twitter:image:src" content="assets/icon/lc_icon_presensi.png" />
+  <meta property="og:title" content="SIAP TUBA" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:image" content="assets/icon/lc_icon_presensi.png" />
+  <meta property="og:description" content="Sistem Administrasi Kabupaten Tulang Bawang" />
+  <meta property="og:site_name" content="SIAP TUBA" />
+
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('icon.png') }}">
+
   <link rel="stylesheet" href="{{ asset('assets/pegawai/css/style.css') }}">
   <!-- PWA  -->
-  <meta name="theme-color" content="#1E2A5E">
-  <link rel="apple-touch-icon" href="{{ asset('assets/icon/lc_icon_absent.png') }}">
-   <!-- PWA  -->
    <link rel="apple-touch-icon" href="{{ asset('assets/icon/lc_icon_presensi.png') }}">
    <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
