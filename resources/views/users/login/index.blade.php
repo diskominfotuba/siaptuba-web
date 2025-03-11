@@ -13,8 +13,8 @@
                     @endif
                     <form action="/user/login" method="POST">
                         <div class="card card-primary mb-3">
-                            <div class="card-header">
-                                <h4>{{ __('Silakan Masuk') }}</h4>
+                            <div class="card-header text-center">
+                                <h4>{{ __('Silakan login') }}</h4>
                             </div>
                             <div class="card-body">
                                 @csrf

@@ -6,14 +6,15 @@
   <meta name="google-site-verification" content="JNUql3k5Q0B10HhKDHMUZRMQb9Z23lLwY3oLqiCAJH0" />
   <title>{{ $title ?? 'Login' }}</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="theme-color" content="#6777ef"/>
   <meta name="turbolinks-visit-control" content="reload">
 
   <link rel="stylesheet" href="{{ asset('assets/pegawai/css/style.css') }}">
   <!-- PWA  -->
-  <meta name="theme-color" content="#6777ef">
+  <meta name="theme-color" content="#1E2A5E">
   <link rel="apple-touch-icon" href="{{ asset('assets/icon/lc_icon_absent.png') }}">
-  <link rel="manifest" href="{{ asset('/manifest.json') }}">
+   <!-- PWA  -->
+   <link rel="apple-touch-icon" href="{{ asset('assets/icon/lc_icon_presensi.png') }}">
+   <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 
 <style>
