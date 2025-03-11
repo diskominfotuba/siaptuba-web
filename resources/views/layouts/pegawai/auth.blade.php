@@ -10,7 +10,7 @@
 
   <meta itemprop="name" content="SIAP TUBA" />
   <meta itemprop="description" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
-  <meta itemprop="image" content="{{ 'assets/icon/lc_icon_presensi.png' }}" />
+  <meta itemprop="image" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@" />
@@ -18,13 +18,13 @@
   <meta name="twitter:description" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
   <meta name="twitter:creator" content="@" />
   
-  <meta name="twitter:image" content="{{ 'assets/icon/lc_icon_presensi.png' }}" />
+  <meta name="twitter:image" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
   
-  <meta name="twitter:image:src" content="{{ 'assets/icon/lc_icon_presensi.png' }}" />
+  <meta name="twitter:image:src" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
   <meta property="og:title" content="SIAP TUBA" />
   <meta property="og:type" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
   <meta property="og:url" content="{{ url()->current() }}" />
-  <meta property="og:image" content="{{ 'assets/icon/lc_icon_presensi.png' }}" />
+  <meta property="og:image" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
   <meta property="og:description" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
   <meta property="og:site_name" content="SIAP TUBA" />
 
