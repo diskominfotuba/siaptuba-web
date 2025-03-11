@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Request Camera Access</title>
+        <script src="face-api.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .container-overlay {
+                position: relative;
+            }
+
+            #videoElement {
+                display: block;
+                height: 500px;
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
+
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="container-overlay">
+                <video id="videoElement" autoplay></video>
+                <img src="posisi.svg" class="overlay" alt="" />
+            </div>
+            <button id="btnPresensi">Wajah tidak terdeteksi</button>
+        </div>
+
+        <script>
+            let isFaceDetected = false;
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const btnPresensi = document.getElementById("btnPresensi");
+                btnPresensi.setAttribute("disabled", "disabled");
+
+                if (
+                    navigator.mediaDevices &&
+                    navigator.mediaDevices.getUserMedia
+                ) {
+                    navigator.mediaDevices
+                        .getUserMedia({ video: true })
+                        .then(function (stream) {
+                            const video =
+                                document.getElementById("videoElement");
+                            video.srcObject = stream;
+                            video.play();
+                            video.addEventListener("loadedmetadata", onPlay);
+
+                            Promise.all([
+                                faceapi.nets.tinyFaceDetector.loadFromUri(
+                                    "/models"
+                                ),
+                                faceapi.nets.faceLandmark68Net.loadFromUri(
+                                    "/models"
+                                ),
+                            ]).then(() => {
+                                console.log("Models loaded");
+                            });
+                        })
+                        .catch(function (err) {
+                            console.error("Error accessing camera: ", err);
+                            alert(
+                                "Gagal mengakses kamera. Pastikan izin telah diberikan."
+                            );
+                        });
+                } else {
+                    alert("Browser ini tidak mendukung akses kamera.");
+                }
+            });
+
+            async function onPlay() {
+                const videoEl = document.getElementById("videoElement");
+                const btnPresensi = document.getElementById("btnPresensi");
+
+                if (
+                    videoEl.paused ||
+                    videoEl.ended ||
+                    !isFaceDetectionModelLoaded() ||
+                    isFaceDetected
+                ) {
+                    setTimeout(() => onPlay(), 100);
+                    return;
+                }
+
+                const options = getFaceDetectorOptions();
+                const result = await faceapi
+                    .detectSingleFace(videoEl, options)
+                    .withFaceLandmarks();
+
+                if (result) {
+                    const landmarks = result.landmarks;
+                    const leftEye = landmarks.getLeftEye();
+                    const rightEye = landmarks.getRightEye();
+                    const mouth = landmarks.getMouth();
+
+                    const eyeDistance = Math.abs(leftEye[0].y - rightEye[3].y);
+                    const eyeThreshold = 10;
+
+                    const mouthY = (mouth[3].y + mouth[9].y) / 2;
+                    const eyeY = (leftEye[1].y + rightEye[1].y) / 2;
+
+                    const neckThreshold = 80;
+
+                    if (
+                        eyeDistance < eyeThreshold &&
+                        mouthY - eyeY > neckThreshold
+                    ) {
+                        // console.log(
+                        //     "Wajah terdeteksi dan berada di tengah serta datar:",
+                        //     result
+                        // );
+                        isFaceDetected = true;
+
+                        videoEl.pause();
+                        videoEl.srcObject
+                            .getTracks()
+                            .forEach((track) => track.stop());
+                        btnPresensi.removeAttribute("disabled");
+                        btnPresensi.textContent = "Isi Kehadiran";
+                    } else {
+                        btnPresensi.textContent = "Posisi Wajah Tidak Sesuai";
+                        setTimeout(() => onPlay(), 100);
+                    }
+                } else {
+                    btnPresensi.textContent = "Wajah tidak terdeteksi";
+                    setTimeout(() => onPlay(), 100);
+                }
+            }
+
+            function isFaceDetectionModelLoaded() {
+                return (
+                    !!faceapi.nets.tinyFaceDetector.params &&
+                    !!faceapi.nets.faceLandmark68Net.params
+                );
+            }
+
+            function getFaceDetectorOptions() {
+                return new faceapi.TinyFaceDetectorOptions();
+            }
+        </script>
+    </body>
+</html>

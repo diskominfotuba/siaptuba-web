@@ -1,0 +1,143 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up()
+    {
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('nip', 20)->unique();
+            $table->text('nipkonversi')->nullable();
+            $table->string('nama', 200);
+            $table->string('gelardepan', 100)->nullable();
+            $table->string('gelarbelakang', 100)->nullable();
+            $table->text('namalengkap');
+            $table->text('tempatlahir_rfk')->nullable();
+            $table->text('pnstempatlahir')->nullable();
+            $table->text('tempatlahirkab_rfk')->nullable();
+            $table->text('pnstempatlahirkab')->nullable();
+            $table->date('tanggallahir')->nullable();
+            $table->integer('usia')->nullable();
+            $table->text('kelompok_usia')->nullable();
+            $table->text('jeniskelamin_rfk')->nullable();
+            $table->text('jeniskelamin')->nullable();
+            $table->text('golongandarah')->nullable();
+            $table->text('agama_rfk')->nullable();
+            $table->text('agama')->nullable();
+            $table->text('perkawinanstatus_rfk')->nullable();
+            $table->text('perkawinanstatus')->nullable();
+            $table->text('kepegawaianstatus_rfk')->nullable();
+            $table->text('kepegawaianstatus')->nullable();
+            $table->text('pnstmt')->nullable();
+            $table->text('kepegawaianjenis_rfk')->nullable();
+            $table->text('kepegawaianjenis')->nullable();
+            $table->text('kedudukanhukum_rfk')->nullable();
+            $table->text('kedudukanhukum')->nullable();
+            $table->text('alamat')->nullable();
+            $table->text('alamatrt')->nullable();
+            $table->text('alamatrw')->nullable();
+            $table->text('alamatdesa_rfk')->nullable();
+            $table->text('pnsdesa')->nullable();
+            $table->text('pnskodepos')->nullable();
+            $table->text('pnskec_rfk')->nullable();
+            $table->text('pnskec')->nullable();
+            $table->text('pnskab_rfk')->nullable();
+            $table->text('pnskab')->nullable();
+            $table->text('pnsprov_rfk')->nullable();
+            $table->text('pnsprov')->nullable();
+            $table->text('alamattelephone1')->nullable();
+            $table->text('alamattelephone2')->nullable();
+            $table->text('motto')->nullable();
+            $table->text('arsiplokasi_rfk')->nullable();
+            $table->text('arsiplokasi')->nullable();
+            $table->text('kartupeg')->nullable();
+            $table->text('kartuaskes')->nullable();
+            $table->text('kartutaspen')->nullable();
+            $table->text('npwp')->nullable();
+            $table->text('ayahnama')->nullable();
+            $table->text('ayahtempatlahir_rfk')->nullable();
+            $table->text('ayahtempatlahir')->nullable();
+            $table->date('ayahtanggallahir')->nullable();
+            $table->text('ayahpekerjaan_rfk')->nullable();
+            $table->text('ayahpekerjaan')->nullable();
+            $table->text('ibunama')->nullable();
+            $table->text('ibutempatlahir_rfk')->nullable();
+            $table->text('ibutempatlahir')->nullable();
+            $table->date('ibutanggallahir')->nullable();
+            $table->text('ibupekerjaan_rfk')->nullable();
+            $table->text('ibupekerjaan')->nullable();
+            $table->text('orangtuaalamat')->nullable();
+            $table->text('orangtuaalamatrt')->nullable();
+            $table->text('orangtuaalamatrw')->nullable();
+            $table->text('orangtualokasidesa_rfk')->nullable();
+            $table->text('orangtuadesa')->nullable();
+            $table->text('orangtuakodepos')->nullable();
+            $table->text('orangtuakec_rfk')->nullable();
+            $table->text('orangtuakec')->nullable();
+            $table->text('orangtuakab_rfk')->nullable();
+            $table->text('orangtuakab')->nullable();
+            $table->text('orangtuaprov_rfk')->nullable();
+            $table->text('orangtuaprov')->nullable();
+            $table->text('orangtuatelephone')->nullable();
+            $table->text('catatan')->nullable();
+            $table->text('pendidikan_rfk')->nullable();
+            $table->text('pendidikan')->nullable();
+            $table->text('tktpendidikan_kode')->nullable();
+            $table->text('tktpendidikan')->nullable();
+            $table->text('namasekolah')->nullable();
+            $table->text('noijazah')->nullable();
+            $table->date('tglijazah')->nullable();
+            $table->year('tahunlulus')->nullable();
+            $table->text('pangkatbknnomor')->nullable();
+            $table->date('pangkatbkntanggal')->nullable();
+            $table->text('golongan')->nullable();
+            $table->text('pangkatgolruang_rfk')->nullable();
+            $table->text('golruangnama')->nullable();
+            $table->text('pangkat')->nullable();
+            $table->integer('pangkatmktahun')->nullable();
+            $table->integer('pangkatmkbulan')->nullable();
+            $table->text('pangkatkeputusan_rfk')->nullable();
+            $table->text('pangkatpenetap_rfk')->nullable();
+            $table->text('pangkatpenetap')->nullable();
+            $table->text('pangkatnnomor')->nullable();
+            $table->date('pangkattanggal')->nullable();
+            $table->date('pangkattmt')->nullable();
+            $table->text('pangkatarsipstatus_rfk')->nullable();
+            $table->text('pangkatarsip')->nullable();
+            $table->text('jabatan_rfk')->nullable();
+            $table->text('jabatannama')->nullable();
+            $table->text('jabataneselon_rfk')->nullable();
+            $table->text('jabatangroup_rfk')->nullable();
+            $table->text('jabatanjenis_rfk')->nullable();
+            $table->text('jabatanjenis')->nullable();
+            $table->text('jabatankelompok_rfk')->nullable();
+            $table->text('jabatankelompok')->nullable();
+            $table->text('jabatantugas_rfk')->nullable();
+            $table->text('skpd_rfk')->nullable();
+            $table->text('skpdnama')->nullable();
+            $table->text('skpdorganisasi_rfk')->nullable();
+            $table->text('skpdorganisasinama')->nullable();
+            $table->text('jabatankeputusan_rfk')->nullable();
+            $table->text('jabatanpenetap_rfk')->nullable();
+            $table->text('jabatanpenetap')->nullable();
+            $table->text('jabatannomor')->nullable();
+            $table->date('jabatantanggal')->nullable();
+            $table->date('jabatantmt')->nullable();
+            $table->text('skpdorganisasistruktur_rfk')->nullable();
+            $table->text('jabatanarsipstatus_rfk')->nullable();
+            $table->text('jabatanarsip')->nullable();
+            $table->text('diklatnama')->nullable();
+            $table->text('diklateselon')->nullable();
+            $table->date('diklatsttptanggal')->nullable();
+            $table->timestamps(); // Untuk created_at dan updated_at
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('profiles');
+    }
+};

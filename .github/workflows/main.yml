@@ -1,0 +1,21 @@
+name: Auto Pull on Update
+
+on:
+  push:
+    branches:
+      - main # Sesuaikan dengan branch yang ingin dipantau
+  workflow_dispatch: # Memungkinkan trigger manual
+
+jobs:
+  auto-pull:
+    runs-on: self-hosted # Menggunakan self-hosted runner
+    steps:
+      - name: Navigate to project directory
+        run: cd /var/www/html/project/siaptuba-web
+
+      - name: Pull latest changes
+        run: |
+          cd /var/www/html/project/siaptuba-web
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
