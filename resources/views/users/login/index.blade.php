@@ -21,7 +21,7 @@
                                 <input type="hidden" name="key" value="{{ request()->key }}">
                                 <div class="form-group">
                                     <label for="nip">{{ __('NIP') }}</label>
-                                    <input id="nip" type="text" class="form-control x-nip" name="nip"
+                                    <input id="nip" type="number" class="form-control x-nip" name="nip"
                                         value="{{ old('nip') }}" tabindex="1" required autofocus>
                                 </div>
                                 <label for="password">{{ __('Password') }}</label>
