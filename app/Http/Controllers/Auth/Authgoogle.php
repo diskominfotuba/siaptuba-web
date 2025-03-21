@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -30,12 +31,21 @@ class Authgoogle extends Controller
                 'email' => $usergoogle->email,
             ])->first();
 
-            if(empty($user)) {
-                return back()->with('error', "Akun email tidak terdaftar!");
+            if($user) {
+                Auth::login($user);
+                return redirect('/user/dashboard');
             }
 
-            Auth::login($user);
-            return redirect('/user/dashboard');
+            $profile = Profile::where([
+                'email' => $usergoogle->email,
+            ])->first();
+            
+            if($profile) {
+                Auth::login($user);
+                return redirect('/user/dashboard');
+            }
+
+            return back()->with('error', "Akun email tidak terdaftar!");
         }
     }
 }

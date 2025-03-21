@@ -20,7 +20,6 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             'nip'       => 'required',
-            'password'  => 'required'
         ]);
 
         if (Auth::attempt(['nip' => $request->nip, 'password' => $request->password])) {
