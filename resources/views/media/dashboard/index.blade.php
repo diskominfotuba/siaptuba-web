@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="section mt-5">
-        <div class="section-title">Riwayat kunjungan</div>
+        <h3>Riwayat kunjungan</h3>
         <div class="transactions" id="riwayat-kunjungan">
             
         </div>
