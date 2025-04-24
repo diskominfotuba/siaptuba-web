@@ -87,6 +87,9 @@ require __DIR__ . '/bkpp.php';
 //panggil route dari modul koran // routes/koran.php
 require __DIR__ . '/koran.php';
 
+//panggil route dari modul koran // routes/koran.php
+require __DIR__ . '/media.php';
+
 //panggil route modul lainnya disini
 
 //semua route untuk mengambil asset dari folder stoarge/...

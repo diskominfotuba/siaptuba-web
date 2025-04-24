@@ -36,7 +36,7 @@ class AppContrller extends Controller
 
         $data['dl_pending'] = Persensi::query()
         ->where('opd_id', Auth::user()->opd_id)
-        ->where('status', 'Dinas Luar (DL)')
+        ->where('status_presensi', 'dl')
         ->where('approval_status', 'pending')
         ->whereHas('user.approval', function ($query) {
             $query->where('approval_id', Auth::id());

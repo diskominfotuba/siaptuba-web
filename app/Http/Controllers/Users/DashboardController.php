@@ -110,16 +110,16 @@ class DashboardController extends Controller
             return Persensi::where('user_id', $user->id)->whereYear('created_at', now()->format('Y'))->whereMonth('created_at', Carbon::now()->month)->first();
         });
         $data['cuti'] = Cache::remember('cuti_' . $user->id, $minutes, function () use ($user) {
-            return Persensi::where('user_id', $user->id)->where('status', 'cuti')->count();
+            return Persensi::where('user_id', $user->id)->where('tipe_presensi', 'cuti')->count();
         });
         $data['hadir'] = Cache::remember('hadir_' . $user->id, $minutes, function () use ($user) {
             return Persensi::where('user_id', $user->id)->whereYear('created_at', now()->format('Y'))->whereMonth('created_at', Carbon::now()->month)->count();
         });
         $data['terlambat'] = Cache::remember('terlambat_' . $user->id, $minutes, function () use ($user) {
-            return $this->presensi->Query()->where('user_id', $user->id)->whereYear('created_at', now()->format('Y'))->whereMonth('created_at', Carbon::now()->month)->where('status', 'like', '%' . 'Terlambat' . '%')->count();
+            return $this->presensi->Query()->where('user_id', $user->id)->whereYear('created_at', now()->format('Y'))->whereMonth('created_at', Carbon::now()->month)->where('tipe_presensi', 'like', '%' . 'Terlambat' . '%')->count();
         });
         $data['dl'] = Cache::remember('dl_' . $user->id, $minutes, function () use ($user) {
-            return Persensi::where('user_id', $user->id)->where('status', 'Dinas Luar (DL)')->count();
+            return Persensi::where('user_id', $user->id)->where('tipe_presensi', 'Dinas Luar (DL)')->count();
         });
 
         $presensi = Persensi::where('user_id', $user->id)

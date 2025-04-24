@@ -41,14 +41,9 @@ return [
             'provider' => 'users',
         ],
 
-        'opd'  => [
+        'media'  => [
             'driver'    => 'session',
-            'provider'  => 'opds',
-        ],
-
-        'pegawai'  => [
-            'driver'    => 'session',
-            'provider'  => 'pegawais',
+            'provider'  => 'media',
         ],
     ],
 
@@ -80,14 +75,9 @@ return [
         //     'table' => 'users',
         // ],
 
-        'opds' => [
+        'media' => [
             'driver'    => 'eloquent',
-            'model'     => \App\Models\Pegawai::class,
-        ],
-
-        'pegawais' => [
-            'driver'    => 'eloquent',
-            'model'     => \App\Models\Pegawai::class,
+            'model'     => \App\Models\Media::class,
         ],
     ],
 

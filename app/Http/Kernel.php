@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'webview' => \App\Http\Middleware\WebviewMiddleware::class,
         'bkpp' => \App\Http\Middleware\BkppMiddleware::class,
         'kepegawaian' => \App\Http\Middleware\KepegawaianMiddleware::class,
+        'media.auth' => \App\Http\Middleware\MediaAuth::class,
     ];
 }
