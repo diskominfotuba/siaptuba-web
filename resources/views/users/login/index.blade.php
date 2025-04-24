@@ -250,7 +250,7 @@
         }
 
         // Simulate Google login (replace with actual Google Sign-In)
-        alert('Google Sign-In tidak terimplementasi. Tambahkan Firebase JS SDK untuk fungsionalitas lengkap.');
+        alert('Google Sign-In sedang diperbaiki...');
       });
 
       // Toggle privacy checkbox
@@ -268,7 +268,7 @@
       privacyLink.addEventListener('click', (e) => {
         e.preventDefault();
         // Navigate to privacy policy page or open modal (implement as needed)
-        alert('Menuju ke halaman Privacy & Policy...');
+        alert('Sedang ada perbaikan pada Privacy & Policy.');
       });
       
       // Make shortcut cards clickable
