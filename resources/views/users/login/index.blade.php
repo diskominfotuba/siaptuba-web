@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Screen</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta name="theme-color" content="#1E2A5E">
+  <title>{{ $title ?? 'SIAP TUBA' }}</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="turbolinks-visit-control" content="reload">
+
+  <meta itemprop="name" content="SIAP TUBA" />
+  <meta itemprop="description" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
+  <meta itemprop="image" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:title" content="SIAP TUBA" />
+  <meta name="twitter:description" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
+  <meta name="twitter:creator" content="@" />
+  
+  <meta name="twitter:image" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
+  
+  <meta name="twitter:image:src" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
+  <meta property="og:title" content="SIAP TUBA" />
+  <meta property="og:type" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:image" content="{{ asset('assets/icon/lc_icon_presensi.png') }}" />
+  <meta property="og:description" content="Sistem Administrasi Pegawai Kabupaten Tulang Bawang" />
+  <meta property="og:site_name" content="SIAP TUBA" />
+
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('icon.png') }}">
+
+  <link rel="stylesheet" href="{{ asset('assets/pegawai/css/style.css') }}">
+  <!-- PWA  -->
+   <link rel="apple-touch-icon" href="{{ asset('assets/icon/lc_icon_presensi.png') }}">
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
   <style>
