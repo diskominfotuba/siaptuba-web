@@ -54,6 +54,7 @@
     .welcome-title {
       font-size: 1.5rem;
       font-weight: bold;
+      color: #f8f9fa
     }
     .welcome-text {
       font-size: 1rem;
