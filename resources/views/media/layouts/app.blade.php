@@ -70,10 +70,12 @@
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD8y5ZQcuol7vxOkXii_wsHqYhCNL0uEM&libraries=geometry&callback&places">
     </script>
-    <script type="text/javascript" src="{{ asset('assets/pegawai/js/plugins/datepicker/bootstrap-datepicker.js') }}">
     </script>
     {{-- @vite(['resources/js/app.js']) --}}
     <script type="text/javascript">
+        var btnLoading = null;
+        var btnSubmit = null;
+
         $(document).ready(function loading() {
             sw();
         });
@@ -100,29 +102,76 @@
             return html
         }
 
-        function loading(btnSubmit, btnLoading, state) {
-            if(state) {
-                $('#' + btnSubmit).addClass('d-none');
-                $('#' + btnLoading).removeClass('d-none');
-            }else {
-                $('#' + btnSubmit).removeClass('d-none');
-                $('#' + btnLoading).addClass('d-none');
-            }
-        }
+        $('form').on('submit', async function (e) {
+            e.preventDefault();
+      
+            var form = $(this);
+            var formData = new FormData(this);
 
-        function loadingsubmit(state) {
-            if (state) {
-                $('#loadingSubmit').removeClass('d-none');
-            } else {
-                $('#loadingSubmit').addClass('d-none');
-                $('#x-action').removeClass('d-none');
-            }
-        }
+            var param = {
+                url: form.attr('action'),
+                method: form.attr('method') || 'POST',
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false
+            };
 
-        $(".datepicker").datepicker({
-            format: "dd-mm-yyyy",
-            autoclose: true
+            await transAjax(param).then((result) => {
+                swal({ 
+                    title: 'Berhasil',
+                    text:  result.message, 
+                    icon: 'success', 
+                }).then(() => {
+                    window.location.reload();
+                });
+                loading(false, btnLoading, btnSubmit);
+            }).catch((err) => {
+
+                if(err.status == 400) {
+                        loading(false, btnLoading, btnSubmit);
+                        swal({
+                        title: "Opps!",
+                        text: err.responseJSON.message,
+                        icon: 'warning',
+                    });
+                    return
+                 }
+
+                 
+                if (err.responseJSON && err.responseJSON.errors) {
+                    loading(false, btnLoading, btnSubmit);
+                    let errors = err.responseJSON.errors;
+                    $.each(errors, function(key, value) {
+                        let errorElement = $('#error-' + key);
+                        if (errorElement.length) {
+                            errorElement.html(value[0]);
+                        }
+                    });
+                } else {
+                    loading(false, btnLoading, btnSubmit);
+                    swal({
+                        title: "Opps!",
+                        text: err.responseJSON.message,
+                        icon: 'error',
+                    });
+                }
+            });
         });
+
+        function loading(state, loading, submit) {
+
+        btnLoading = loading;
+        btnSubmit = submit;
+
+            if(state) {
+                $('#'+btnLoading).removeClass('d-none');
+                $('#'+btnSubmit).addClass('d-none');
+            } else {
+                $('#'+btnLoading).addClass('d-none');
+                $('#'+btnSubmit).removeClass('d-none');
+            }
+        }   
 
     </script>
     @stack('js')

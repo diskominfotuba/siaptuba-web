@@ -224,7 +224,7 @@
         <i class="bi bi-eye password-toggle" id="password-toggle"></i>
       </div>
       
-      <div class="privacy-container mb-3">
+      {{-- <div class="privacy-container mb-3">
         <div class="checkbox-container">
           <div class="custom-checkbox checked" id="privacy-checkbox">
             <i class="bi bi-check"></i>
@@ -233,17 +233,17 @@
         <div class="privacy-text">
           Saya menyetujui <span class="privacy-link" id="privacy-link">Privacy & Policy</span>
         </div>
-      </div>
+      </div> --}}
       
       <button class="login-button" type="submit" id="login-button">Login</button>
       </form>
-      <div class="text-center mt-3 mb-3">
+      {{-- <div class="text-center mt-3 mb-3">
         <a href="#" class="forgot-password">Lupa password?</a>
-      </div>
+      </div> --}}
       
       <div class="divider"></div>
       
-      <a href="#" class="google-login-button mt-3" id="google-login-button">
+      <a href="/google/login" class="google-login-button mt-3" id="google-login-button">
         <i class="bi bi-google"></i> Login dengan Google
       </a>
     </div>
@@ -257,7 +257,6 @@
       const passwordInput = document.getElementById('password');
       const passwordToggle = document.getElementById('password-toggle');
       const loginButton = document.getElementById('login-button');
-      const googleLoginButton = document.getElementById('google-login-button');
       const privacyCheckbox = document.getElementById('privacy-checkbox');
       const privacyLink = document.getElementById('privacy-link');
       let showPassword = false;
@@ -269,18 +268,6 @@
         passwordInput.type = showPassword ? 'text' : 'password';
         passwordToggle.classList.toggle('bi-eye');
         passwordToggle.classList.toggle('bi-eye-slash');
-      });
-
-      // Handle Google login
-      googleLoginButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (!agreeToPrivacy) {
-          alert('Anda harus menyetujui Privacy & Policy untuk melanjutkan.');
-          return;
-        }
-
-        // Simulate Google login (replace with actual Google Sign-In)
-        alert('Google Sign-In sedang diperbaiki...');
       });
 
       // Toggle privacy checkbox

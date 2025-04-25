@@ -23,8 +23,8 @@ Route::get('/pdf-viewer', function () {
 
 //login google
 Route::middleware('guest')->group(function () {
-    Route::get('auth/redirect', [Auth\Authgoogle::class, 'redirect'])->name('auth-redirect');
-    Route::get('auth/callback', [Auth\Authgoogle::class, 'callback'])->name('auth-callback');
+    Route::get('/google/login', [Auth\Authgoogle::class, 'redirect'])->name('auth-redirect');
+    Route::get('/google/callback', [Auth\Authgoogle::class, 'callback'])->name('auth-callback');
 });
 Route::get('/user/logout', Auth\LogoutController::class)->middleware('auth');
 

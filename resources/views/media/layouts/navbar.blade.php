@@ -1,6 +1,6 @@
 <div class="app-container appHeader bg-primary text-light">
     <div class="left">
-        <a href="#">
+        <a href="/media/profile" class="headerButton">
             <div class="headerButton">
                 <img src="{{ asset('assets/img/avatar-1.png') }}" alt="image" class="imaged w32 mr-1">
                 <span class="" style="line-height: 1"><span style="font-size: 11px">Tabik pun,</span><br>{{ auth()->guard('media')->user()->nama }}</span>

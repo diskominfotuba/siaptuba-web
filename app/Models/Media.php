@@ -15,8 +15,12 @@ class Media extends Authenticatable
     protected $keyType = 'string';
 
     protected $fillable = [
-        'media_id',
-        'kegiatan_id'
+        'nama',
+        'email',
+        'token',
+        'no_hp',
+        'nama_media',
+        'alamat_kantor',
     ];
 
     protected static function booted()

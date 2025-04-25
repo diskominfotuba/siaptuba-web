@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
+use App\Models\Media;
 
 class Authgoogle extends Controller
 {
@@ -45,6 +46,13 @@ class Authgoogle extends Controller
                 return redirect('/user/dashboard');
             }
 
+            $media = Media::where([
+                'email' => $usergoogle->email,
+            ])->first();
+            if($media) {
+                Auth::guard('media')->login($media);
+                return redirect('/media/dashboard');
+            }
             return back()->with('error', "Akun email tidak terdaftar!");
         }
     }

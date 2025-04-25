@@ -21,15 +21,16 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $request->session()->regenerate();
+            return redirect()->intended('/user/dashboard');
+        }
+
         $media = Media::where('email', $request->email)->where('token', $request->password)->first();
         if($media) {
             Auth::guard('media')->login($media);
             return redirect('/media/dashboard');
-        }
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            $request->session()->regenerate();
-            return redirect()->intended('/user/dashboard');
         }
 
         return back()->with('error', 'Email atau Password Salah!')->onlyInput('email');
