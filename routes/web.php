@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 Route::get('/login', function () {
@@ -267,3 +266,10 @@ Route::get('/ekin/{opd}/{year}/{filename}', function ($opd, $year, $filename) {
         'Content-Disposition' => 'inline; filename="' . basename($path) . '"',
     ]);
 })->name('lampiran-ekin');
+
+Route::get('/scanner', [Scanner\ScanController::class, 'index']);
+Route::get('/scanner/scan', [Scanner\ScanController::class, 'show']);
+
+Route::get('kebijakan-privasi', function() {
+    return view('kebijakan');
+});
