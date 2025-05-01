@@ -47,26 +47,29 @@
     <div id="appCapsule">
         <div class="section">
             <div class="section-title">1. Pendahuluan</div>
-  <p class="paragraph">
-    Selamat datang di Aplikasi SIAPTUBA. Kami (Dinas komunikasi dan Informatika Kabupaten Tulang Bawang) selaku pengembang aplikasi, menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat Anda menggunakan aplikasi ini.
-  </p>
+            <p class="paragraph">
+                Selamat datang di Aplikasi SIAPTUBA. Kami (Dinas komunikasi dan Informatika Kabupaten Tulang Bawang)
+                selaku pengembang aplikasi, menghargai privasi Anda dan berkomitmen untuk melindungi data Anda.
+                Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi
+                Anda saat Anda menggunakan aplikasi ini.
+            </p>
 
-  <div class="section-title">2. Informasi yang dikumpulkan</div>
-  <p class="paragraph">Kami dapat mengumpulkan informasi berikut:</p>
-  <ul>
-    <li class="bullet-point">Informasi pribadi seperti nama, alamat dan email</li>
-    <li class="bullet-point">Data penggunaan aplikasi</li>
-  </ul>
+            <div class="section-title">2. Informasi yang dikumpulkan</div>
+            <p class="paragraph">Kami dapat mengumpulkan informasi berikut:</p>
+            <ul>
+                <li class="bullet-point">Informasi pribadi seperti nama, alamat dan email</li>
+                <li class="bullet-point">Data penggunaan aplikasi</li>
+            </ul>
 
-  <div class="section-title">3. Bagaimana Kami Menggunakan Informasi Anda</div>
-  <p class="paragraph">Informasi yang kami kumpulkan digunakan untuk:</p>
-  <ul>
-    <li class="bullet-point">Menyediakan dan memelihara layanan</li>
-    <li class="bullet-point">Meningkatkan aplikasi</li>
-    <li class="bullet-point">Mencegah aktivitas yang melanggar hukum</li>
-  </ul>
+            <div class="section-title">3. Bagaimana Kami Menggunakan Informasi Anda</div>
+            <p class="paragraph">Informasi yang kami kumpulkan digunakan untuk:</p>
+            <ul>
+                <li class="bullet-point">Menyediakan dan memelihara layanan</li>
+                <li class="bullet-point">Meningkatkan aplikasi</li>
+                <li class="bullet-point">Mencegah aktivitas yang melanggar hukum</li>
+            </ul>
 
-  <div class="section-title">4. Keamanan Data</div>
+  <div class="section-title">4. Izin Aplikasi</div>
   <p class="paragraph">
     Aplikasi ini meminta akses ke kamera, lokasi, dan notifikasi. Izin ini digunakan semata-mata untuk keperluan
     pengisian presensi dan notifikasi.
@@ -94,6 +97,7 @@
     Jika Anda memiliki pertanyaan atau masalah tentang Kebijakan Privasi, silakan hubungi admin di: <a href="mailto:siaptuba@tulangbawagkab.go.id">siaptuba@tulangbawagkab.go.id</a>
   </p>
 
-  <p class="last-updated">Terakhir diperbarui: 22 April 2025</p>
+
+            <p class="last-updated">Terakhir diperbarui: 22 April 2025</p>
 </body>
 </html>
