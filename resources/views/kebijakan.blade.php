@@ -68,27 +68,32 @@
 
   <div class="section-title">4. Keamanan Data</div>
   <p class="paragraph">
+    Aplikasi ini meminta akses ke kamera, lokasi, dan notifikasi. Izin ini digunakan semata-mata untuk keperluan
+    pengisian presensi dan notifikasi.
+    Anda dapat memilih untuk menolak izin ini; namun, beberapa fitur aplikasi yang memerlukan akses yang telah disebutkan
+    mungkin tidak dapat berfungsi dengan baik.
+  </p>
+
+  <div class="section-title">5. Keamanan Data</div>
+  <p class="paragraph">
     Kami menerapkan langkah-langkah keamanan yang tepat untuk melindungi informasi pribadi Anda dari akses yang tidak sah, pengubahan, pengungkapan, atau penghancuran.
   </p>
 
-  <div class="section-title">5. Berbagi Informasi</div>
+  <div class="section-title">6. Berbagi Informasi</div>
   <p class="paragraph">
     Kami tidak akan membagikan informasi pribadi Anda kepada siapapun tanpa izin Anda, kecuali jika diperlukan untuk memenuhi hukum atau peraturan yang berlaku.
   </p>
 
-  <div class="section-title">6. Perubahan pada Kebijakan Privasi</div>
+  <div class="section-title">7. Perubahan pada Kebijakan Privasi</div>
   <p class="paragraph">
     Kebijakan Privasi dapat berubah dari waktu ke waktu. Setiap perubahan akan di posting di halaman ini.
   </p>
 
-  <div class="section-title">7. Hubungi Admin</div>
+  <div class="section-title">8. Hubungi Admin</div>
   <p class="paragraph">
     Jika Anda memiliki pertanyaan atau masalah tentang Kebijakan Privasi, silakan hubungi admin di: <a href="mailto:siaptuba@tulangbawagkab.go.id">siaptuba@tulangbawagkab.go.id</a>
   </p>
 
   <p class="last-updated">Terakhir diperbarui: 22 April 2025</p>
 </body>
-
-
-<!-- Mirrored from finapp.bragherstudio.com/view3/app-blog-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 May 2023 08:14:19 GMT -->
 </html>
