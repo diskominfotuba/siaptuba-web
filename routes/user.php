@@ -90,6 +90,10 @@ Route::middleware('auth')->prefix('user')->group(function () {
     //route lhkpn list
     Route::get('/lhkpn', [Users\LhkpnController::class, 'index'])->name('user.lhkpn');
 
+    //route hapus akun
+    Route::get('/hapus-akun', [Users\HapusAkunController::class, 'index']);
+    Route::post('/hapus-akun', [Users\HapusAkunController::class, 'store']);
+
     //route untuk sinkronisasi-data-pegawai di services sso
     Route::post('/sso/login', [API\SinkrondataController::class, 'login']);
     Route::post('/sinkronisasi-data-pegawai', [API\SinkrondataController::class, 'sinkronisasi']);

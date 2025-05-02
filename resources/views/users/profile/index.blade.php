@@ -223,16 +223,17 @@
                         <a href="/admin/dashboard" data-turbo="false"
                             class="btn-submit btn btn-primary mr-1 btn-lg btn-block">Kelola pegawai</a>
                         <button data-toggle="modal" data-target="#logout"
-                            class="btn-submit btn btn-danger mr-1 btn-lg btn-block mt-2">Keluar</button>
+                            class="btn-submit btn btn-warning mr-1 btn-lg btn-block mt-2">Keluar</button>
                     @elseif(auth()->user()->role == 'oprator')
                         <a href="/oprator/dashboard" data-turbo="false"
                             class="btn-submit btn btn-primary mr-1 btn-lg btn-block">Kelola pegawai</a>
                         <button data-toggle="modal" data-target="#logout"
-                            class="btn-submit btn btn-danger mr-1 btn-lg btn-block mt-2">Keluar</button>
+                            class="btn-submit btn btn-warning mr-1 btn-lg btn-block mt-2">Keluar</button>
                     @else
                         <button data-toggle="modal" data-target="#logout"
-                            class="btn-submit btn btn-danger mr-1 btn-lg btn-block mt-2">Keluar</button>
+                            class="btn-submit btn btn-warning mr-1 btn-lg btn-block mt-2">Keluar</button>
                     @endif
+                    <a href="hapus-akun" class="btn btn-danger btn-lg btn-block">Hapus akun saya</a>
                 </div>
             </div>
         </div>
