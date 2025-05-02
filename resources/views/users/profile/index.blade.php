@@ -24,9 +24,15 @@
             <div class="section mt-3 text-center">
                 <div class="avatar-section">
                     {{-- <input type="file" onclick="openWebcame(0)" id="image"  class="upload" name="photo" id="avatar" accept=".jpeg, .jpg, .png"> --}}
+                    @if (auth()->user()->photo)
                     <img onclick="setWebcame(0)" id="imgPrev"
                         src="{{ route('photo-profile', ['filename' => auth()->user()->photo]) }}" alt="image"
                         class="imaged w100">
+                    @else
+                        <img onclick="setWebcame(0)" id="imgPrev"
+                        src="{{'https://ui-avatars.com/api/?name=' . str_replace(' ', '+',  auth()->user()->nama)}}" alt="image"
+                        class="imaged w100">
+                    @endif
                 </div>
             </div>
             <div class="section mt-2 mb-2">
