@@ -2,7 +2,11 @@
     <div class="left">
         <a href="{{ route('user.dashboard') }}">
             <div class="headerButton">
+                @if (auth()->user()->photo)
                 <img src="{{ route('photo-profile', ['filename' => auth()->user()->photo]) }}" alt="image" class="imaged w32 mr-1">
+                @else
+                <img src="{{'https://ui-avatars.com/api/?name=' . str_replace(' ', '+',  auth()->user()->nama)}}" alt="image" class="imaged w32 mr-1">
+                @endif
                 <span class="" style="line-height: 1"><span style="font-size: 11px">Tabik pun,</span><br> {{ auth()->user()->nama }}</span>
             </div>
         </a>

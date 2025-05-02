@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -133,5 +134,12 @@ class User extends Authenticatable
     public function profile_one()
     {
         return $this->hasOne(Profile::class, 'nip', 'nip');
+    }
+
+    protected function avatar(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $value != '' ? url('/storage/avatars/' . $value) : 'https://ui-avatars.com/api/?name=' . str_replace(' ', '+', $this->name) . '&background=4e73df&color=ffffff&size=100',
+        );
     }
 }
