@@ -26,7 +26,7 @@ class Authgoogle extends Controller
             return Redirect::route('login');
         } else {
 
-            $usergoogle = Socialite::driver('google')->user();
+            $usergoogle = Socialite::driver('google')->stateless()->user();
 
             $user = User::where([
                 'email' => $usergoogle->email,
